@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brainrot Chronicles</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ff00fb79;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        header {
+            background-color: #ff9696;
+            padding: 20px;
+            font-size: 2em;
+            font-weight: bold;
+            color: #ff00ff;
+        }
+        h1 {
+            font-size: 3em;
+            margin: 20px 0;
+            color: #bfffbf;
+        }
+        h2 {
+            font-size: 2em;
+            margin: 10px 0;
+            color: #ff00ff;
+        }
+        .container {
+            padding: 20px;
+        }
+        .characters {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+        .character {
+            background-color: #0ad6ff;
+            padding: 15px;
+            border-radius: 10px;
+            width: 200px;
+            margin: 10px;
+        }
+        .character h3 {
+            font-size: 1.5em;
+            color: #00ff00;
+        }
+        .books {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+        .book {
+            background-color: #ffe072;
+            padding: 15px;
+            border-radius: 10px;
+            width: 150px;
+            margin: 10px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .book:hover {
+            transform: scale(1.1);
+        }
+        .book h3 {
+            font-size: 1.2em;
+            color: #00ff00;
+        }
+        .pdf-viewer {
+            margin: 20px auto;
+            width: 90%;
+            height: 70vh; /* Use viewport height for better responsiveness */
+            background-color: #fff872;
+            border-radius: 10px;
+            padding: 10px;
+            overflow: hidden; /* Ensure the iframe doesn't overflow */
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            overflow: auto; /* Enable scrolling */
+        }
+        footer {
+            background-color: #ff9595;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Brainrot Chronicles 🚀
+    </header>
+    <div class="container">
+        <h1>Skibidi Sigma Rizz 🧠</h1>
+        <h2>Meet the Gyat Squad</h2>
+        <div class="characters">
+            <div class="character">
+                <h3>Taeyang</h3>
+                <p>The Sigma Skibidi King 👑</p>
+            </div>
+            <div class="character">
+                <h3>Reese</h3>
+                <p>Rizz Master Extraordinaire 🎩</p>
+            </div>
+            <div class="character">
+                <h3>Gio</h3>
+                <p>The Gyat Guru 💪</p>
+            </div>
+            <div class="character">
+                <h3>Jayden</h3>
+                <p>Brainrot Overlord 🧠</p>
+            </div>
+            <div class="character">
+                <h3>Rohan</h3>
+                <p>Skibidi Strategist 🎯</p>
+            </div>
+            <div class="character">
+                <h3>William</h3>
+                <p>Sigma Rizzler 🕶️</p>
+            </div>
+        </div>
+        <h2>Choose Your Brainrot Adventure</h2>
+        <div class="books">
+            <div class="book" onclick="loadBook('book1.pdf')">
+                <h3>Book 1</h3>
+                <p>Skibidi Origins</p>
+            </div>
+            <div class="book" onclick="loadBook('book2.pdf')">
+                <h3>Book 2</h3>
+                <p>Rizz Wars</p>
+            </div>
+            <div class="book" onclick="loadBook('book3.pdf')">
+                <h3>Book 3</h3>
+                <p>Gyat Apocalypse</p>
+            </div>
+            <div class="book" onclick="loadBook('book4.pdf')">
+                <h3>Book 4</h3>
+                <p>Sigma Rising</p>
+            </div>
+            <div class="book" onclick="loadBook('book5.pdf')">
+                <h3>Book 5</h3>
+                <p>Brainrot Reborn</p>
+            </div>
+            <div class="book" onclick="loadBook('book6.pdf')">
+                <h3>Book 6</h3>
+                <p>Skibidi Forever</p>
+            </div>
+            <div class="book" onclick="loadBook('book7.pdf')">
+                <h3>Book 7</h3>
+                <p>Rizz of the Titans</p>
+            </div>
+            <div class="book" onclick="loadBook('book8.pdf')">
+                <h3>Book 8</h3>
+                <p>Final Gyat</p>
+            </div>
+        </div>
+        <h2>Read the Brainrot Chronicles</h2>
+        <div class="pdf-viewer">
+            <iframe id="pdf-viewer" src="book1.pdf" width="100%" height="100%" style="border: none;"></iframe>
+        </div>
+    </div>
+    <footer>
+        &copy; 2025 Brainrot Chronicles. All rights reserved. Skibidi Rizz Forever! 🚀
+    </footer>
+
+    <script>
+        function loadBook(bookPath) {
+            document.getElementById('pdf-viewer').src = bookPath;
+        }
+    </script>
+</body>
+</html>
