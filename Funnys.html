@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brainrot Chronicles - Joke Collection</title>
+    <style>
+        :root {
+            --primary-color: #00ff1e;
+            --background-color: #ff01ea;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+            background-color: var(--background-color);
+            color: #72c2ff;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .joke-container {
+            min-height: 200px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 15px;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease;
+        }
+
+        .joke-container:hover {
+            transform: translateY(-5px);
+        }
+
+        button {
+            padding: 12px 24px;
+            font-size: 1rem;
+            cursor: pointer;
+            background: var(--primary-color);
+            color: rgb(221, 255, 211);
+            border: none;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgb(187, 255, 0);
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgb(228, 255, 210, 0.8);
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 -2px 10px rgb(43, 177, 255);
+        }
+
+        #joke-text {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Brainrot Chronicles-Joke Collection</h1>
+    <div class="joke-container">
+        <p id="joke-text">Why don't scientists trust atoms? Because they make up everything!</p>
+    </div>
+    <button onclick="nextJoke()">Next Joke</button>
+
+    <footer>
+        Brainrot Chronicles &copy; 2025 All rights reserved
+    </footer>
+
+    <script>
+        const jokes = [
+    "Why don't balls say jokes? They don't have the guts!",
+    "What did Lila call Gio in book 8 in Brainrot Chronicles? Shrek Slayer!",
+    "What do you think will happen in book 10? The troll king gets slayed!",
+    "Why don't rizzlers tell jokes? They'd crack up!",
+    "What do you call a thing with no balls? A gummy bear!",
+    "Why did the chicken cross the road? To get to the other side!",
+    "Why did the thing have no balls? Because it played table tennis!",
+    "Sigma rule #1: If it makes sense, delete it.",
+    "Lucas Li: I have the biggest balls. Gigachad: But do you have the thingy to match?",
+    "Rohan: I stab you 2000 times! Everyone: Chill, bro!",
+    "Gigachad: Fool, you cannot defeat me! Lucas: Watch me. *proceeds to summon the power of memes.*",
+    "Every Brainrot fight escalates from 0 to nuclear explosion instantly.",
+    "Reese fears no man… but that thingy? It scares him.",
+    "The thingy is the ultimate weapon. It can defeat anything, even the power of friendship.",
+    "Taeyang asks if they just started a war over a meme. Jayden confirms.",
+    "Brainrot Chronicles: where plot is optional, but nonsense is required.",
+    "They came for the story… they stayed for the absolute brain damage.",
+    "Every Brainrot Chronicles chapter is a Sigma training arc.",
+    "Lucas Li has the biggest balls. Gigachad asks if he has the thingy to match.",
+    "Brainrot Chronicles has deep lore—too bad nobody understands it.",
+    "Sigma rule 79: Never let them know your next meme.",
+    "Taeyang asks if they can have one serious chapter. Everyone else says no.",
+    "Brainrot Chronicles has more memes per second than the internet itself.",
+    "Final boss fight? Nah, just another Tuesday in Brainrot.",
+    "Lucas dodges 9999 attacks, then wins with one Sigma stare.",
+    "Jayden uses 500% of his power. Reese asks if he used his thingy.",
+    "A normal fight is boring. A fight where everyone dies, revives, then has pizza is perfect.",
+    "In Brainrot, plot armor is stronger than titanium.",
+    "Lucas challenges Gigachad. Gigachad agrees, but first, they flex for 20 minutes.",
+    "Jayden’s ultimate move: GYAT CANNON.",
+    "Only true Sigmas read Brainrot Chronicles unironically.",
+    "Lucas’s grindset is so strong, he sleeps while working.",
+    "Sigma rule 420: If it’s not dumb, make it dumber.",
+    "Lucas’s bank account is empty, but his meme folder is full.",
+    "Lucas exclaims he found out the truth. Jayden asks if it’s stupid. It is.",
+    "Rohan stabs everyone 2000 times. Reese asks what now. Rohan suggests eating.",
+    "Jayden dies, comes back, forgets why he died, then dies again.",
+    "Lucas declares they need to save the world. Jayden insists they must focus on memes first.",
+    "Brainrot Chronicles characters die so often, even death is confused.",
+    "Gigachad reveals a plot twist: This was all a simulation. Lucas is shocked, then realizes it makes sense.",
+    "Lucas Li’s balls are legendary, but his thingy is mythological.",
+    "Lucas is so powerful, his thingy has its own gravitational pull.",
+    "Gigachad challenges Lucas’s balls to a duel. Lucas prepares for victory.",
+    "Jayden asks what Lucas’s secret weapon is. Reese warns that he doesn’t want to know.",
+    "Lucas’s thingy once broke the fabric of reality.",
+    "They say Lucas’s thingy is hidden in the lost archives.",
+    "Lucas doesn’t use weapons. His balls and thingy are enough.",
+    "Lucas vs. the multiverse. Who wins? Lucas’s thingy.",
+    "Lucas’s balls and thingy combo is stronger than nuclear warfare.",
+    "Lucas once fought a god and won with a single thingy attack.",
+    "Brainrot Chronicles rewires your brain permanently.",
+    "Jayden asks for the plan. Lucas says they don’t need a plan, they have memes.",
+    "Every Brainrot Chronicles decision is made with zero thought.",
+    "The IQ drop after reading Brainrot Chronicles is scientifically proven.",
+    "Reese warns that things are getting out of hand. Lucas states it was never in hand.",
+    "Gigachad calls the book dumb. Lucas calls him dumb. Gigachad admits fair point.",
+    "Brainrot Chronicles is so confusing, even the author is lost.",
+    "Lucas asks what the plot is again. Jayden shrugs and tells him to keep going.",
+    "Brainrot Chronicles has more random explosions than a Michael Bay movie.",
+    "Even the narrator is confused.",
+    "Brainrot Chronicles characters argue with the author daily.",
+    "Jayden asks if this is a joke. Reese wonders if everything is a joke.",
+    "Lucas once fought the author and won.",
+    "The plot isn’t broken. It was never whole.",
+    "Brainrot Chronicles rewrites itself mid-story.",
+    "Brainrot Chronicles was made by accident… and it shows.",
+    "Lucas asks who wrote this. The narrator wishes they knew.",
+    "Every Brainrot Chronicles fan has seen things they can’t unsee.",
+    "You don’t read Brainrot Chronicles… it reads you.",
+    "Rohan stabs someone. They don’t react. Rohan stabs them 2000 more times.",
+    "Lucas asks if they just won. Reese says the real victory was the memes we made along the way.",
+    "Jayden tries to understand the story. He fails.",
+    "Lucas’s thingy is so powerful, NASA tried to study it.",
+    "Gigachad flexes so hard, reality glitches.",
+    "Lucas’s thingy has plot armor stronger than the main character.",
+    "Jayden tries to take things seriously. He gets kicked out.",
+    "Lucas says he’ll explain everything. He explains nothing.",
+    "Every time you ask for logic in Brainrot Chronicles, an author loses their sanity.",
+    "Lucas eats pizza. The entire universe resets.",
+    "Jayden declares war. Reese asks over what. Jayden says it doesn’t matter.",
+    "Lucas’s Sigma stare has the power of 1000 memes.",
+    "Brainrot Chronicles villains always lose because they don’t have enough rizz.",
+    "Lucas’s balls have gravitational pull. Scientists are concerned.",
+    "Jayden realizes too late—he was in a meme battle all along.",
+    "Lucas’s ultimate attack: BALLS & THINGY OMEGA STRIKE.",
+    "Brainrot Chronicles makes perfect sense if you have zero brain cells left.",
+    "Jayden breaks the fourth wall. The author kicks him back in.",
+    "Gigachad warns that his final form is coming. Lucas asks if it has more gyats.",
+    "Lucas once spoke in full sentences. It was terrifying.",
+    "Brainrot Chronicles characters get stronger based on how dumb their attacks are.",
+    "Jayden says he finally gets it. He doesn’t.",
+    "Lucas’s greatest power: being too based to fail.",
+    "Every character in Brainrot Chronicles has unlimited stamina… unless the plot says otherwise.",
+    "Lucas’s eyebrows have more power than the entire cast.",
+    "Gigachad leaves, promising to return stronger. Lucas asks if he’ll bring more memes.",
+    "Lucas declares his legacy: The Ultimate Sigma Lord of Balls and Thingys."
+];
+        
+        let currentJoke = 0;
+
+        function nextJoke() {
+            const jokeText = document.getElementById('joke-text');
+            jokeText.style.opacity = '0';
+            
+            setTimeout(() => {
+                currentJoke = (currentJoke + 1) % jokes.length;
+                jokeText.textContent = jokes[currentJoke];
+                jokeText.style.opacity = '1';
+            }, 200);
+        }
+    </script>
+</body>
+</html>
