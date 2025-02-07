@@ -1,8 +1,35 @@
 <!DOCTYPE html>
+<div id="timer">00:00:00</div>
+<script>
+    window.onload = function() {
+        let startTime = Date.now();
+        let timerElement = document.getElementById('timer');
+        
+        setInterval(function() {
+            let elapsedTime = Math.floor((Date.now() - startTime) / 1000);
+            let hours = Math.floor(elapsedTime / 3600);
+            let minutes = Math.floor((elapsedTime % 3600) / 60);
+            let seconds = elapsedTime % 60;
+            
+            let timeString = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+            
+            document.title = timeString + ' - Brainrot Chronicles';
+            timerElement.textContent = timeString;
+        }, 1000);
+    };
+</script>
+<style>
+    #timer {
+        font-size: 2em;
+        font-family: monospace;
+        margin: 20px;
+    }
+</style>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Brainrot Chronicles - Joke Collection</title>
     <style>
         :root {
@@ -181,7 +208,11 @@
     "Every character in Brainrot Chronicles has unlimited stamina… unless the plot says otherwise.",
     "Lucas’s eyebrows have more power than the entire cast.",
     "Gigachad leaves, promising to return stronger. Lucas asks if he’ll bring more memes.",
-    "Lucas declares his legacy: The Ultimate Sigma Lord of Balls and Thingys."
+    "Lucas declares his legacy: The Ultimate Sigma Lord of Balls and Thingys.",
+    "Brainrot Chronicles: where the plot is made up and the memes matter.",
+    "Lucas’s thingy is so powerful, it has its own theme song.",
+    "Gigachad asks if Lucas is ready. Lucas says he was born ready.",
+    "Lucas’s balls are legendary. His thingy is mythical. His memes are unstoppable."
 ];
         
         let currentJoke = 0;
